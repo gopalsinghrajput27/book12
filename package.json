@@ -1,0 +1,25 @@
+{
+  "name": "gopal",
+  "version": "1.0.0",
+  "description": "This Project Create For Help",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon start src/index.js",
+    "dev": "nodemon start src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gopal",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "i": "^0.3.7",
+    "mongoose": "^7.4.1",
+    "morgan": "^1.10.0",
+    "nginx": "^1.0.8",
+    "nodemon": "^3.0.1",
+    "npm": "^9.8.1"
+  }
+}
