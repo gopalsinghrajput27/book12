@@ -16,8 +16,8 @@ router.route("/Books/new").post(createBooks);
 router.route("/Books").get(getAllBooks);
 router
   .route("/Books/:bookName")
-  .get(requireApiKey, getbookName)
-  .put(requireApiKey, getbookUpdata)
-  .delete(requireApiKey, getbookandDelete);
+  .get(getbookName)
+  .put(getbookUpdata)
+  .delete(getbookandDelete);
 
 module.exports = router;
