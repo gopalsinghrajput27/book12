@@ -3,7 +3,6 @@
 # I have provided a working version of the Dockerfile below with comments explaining each change.
 
 # syntax=docker/dockerfile:1
-rm -rf node_modules package-lock.json
 # Updated the NODE_VERSION to the latest LTS version of Node.js.
 
 ARG NODE_VERSION=14.17.0
@@ -23,7 +22,7 @@ WORKDIR /app
 
 # before running npm install, which will leverage Docker's caching to speed up subsequent builds.
 
-COPY package*.json ./
+
 
 # Install the dependencies
 
