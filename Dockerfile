@@ -58,4 +58,4 @@ EXPOSE 80
 
 # Changed the command to use 'node' instead of 'npm'.
 
-CMD ["node", "index.js"]
+CMD ["node", "src/index.js"]
