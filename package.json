@@ -4,8 +4,8 @@
   "description": "This Project Create For Help",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon start src/index.js",
-    "dev": "nodemon start src/index.js",
+    "start": "node start src/index.js",
+    "dev": "node start src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "gopal",

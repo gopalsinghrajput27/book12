@@ -1,12 +1,13 @@
 const app = require("./sever");
 const connectDatebase = require("./config/database");
+const Port = process.env.PORT || 9000;
 
 require("dotenv").config({
   path: "./src/config/config.env",
 });
 
 connectDatebase();
-app.listen(process.env.PORT, () => {
+app.listen(Port, () => {
   console.log(`Server is running on http://localhost:${process.env.PORT}`);
 });
 
