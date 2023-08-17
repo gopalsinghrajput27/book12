@@ -34,11 +34,7 @@ RUN npm install --production
 
 # Setting the user at runtime using the 'USER' instruction.
 
-RUN addgroup -g 1000 node \
 
-&& adduser -u 1000 -G node -s /bin/sh -D node \
-
-&& chown -R node:node /app
 
 USER node
 
