@@ -18,9 +18,6 @@ ENV NODE_ENV=production
 
 WORKDIR /app
 
-Change# the working directory to /app
-
-WORKDIR /app
 
 # Copy the package.json and package-lock.json to the /app directory
 
