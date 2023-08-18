@@ -53,17 +53,29 @@ exports.getbookUpdata = catchAsyncErrors(async (req, res, next) => {
   });
 
   if (!book) {
-    return next(new ErrorHandler("books not found", 404));
+    return next(new ErrorHandler("Book not found", 404));
   }
+
   const { BookName, img } = req.body;
-  book.BookName = BookName;
-  book.img = img;
-  const updateBook = await book.save();
+
+  // Update the book's name if provided
+  if (BookName) {
+    book.BookName = BookName;
+  }
+
+  // Update the book's image if provided
+  if (img) {
+    book.img = img;
+  }
+
+  const updatedBook = await book.save();
+
   res.status(200).json({
     success: true,
-    book: updateBook,
+    book: updatedBook,
   });
 });
+
 
 exports.getbookandDelete = catchAsyncErrors(async (req, res, next) => {
   const BookNames = req.params.bookName;
