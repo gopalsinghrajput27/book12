@@ -6,7 +6,7 @@ const unitSchema = new mongoose.Schema({
     type: String,
     unique: true,
     required: [true, "Please Enter Your Unit Name"],
-    maxLength: [30, "Name cannot exceed 30 characters"],
+   
     minLength: [4, "Name should have more than 4 characters"],
   },
   UnitNumber: {
