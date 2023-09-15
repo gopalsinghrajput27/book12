@@ -7,16 +7,14 @@ const videosSchema = new mongoose.Schema({
     unique: true,
     required: [true, "Please Enter Your Topic Name"],
 
-    maxLength: [20, "Name cannot exceed 10 characters"],
-    minLength: [2, "Name should have more than 4 characters"],
+ 
   },
   VideosName: {
     type: String,
 
     required: [true, "Please Enter Your Topic Name"],
 
-    maxLength: [20, "Name cannot exceed 10 characters"],
-    minLength: [2, "Name should have more than 4 characters"],
+  
   },
   TopicID: {
     type: mongoose.Schema.Types.ObjectId,
