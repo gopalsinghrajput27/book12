@@ -6,8 +6,7 @@ const topicSchema = new mongoose.Schema({
     type: String,
     unique: true,
     required: [true, "Please Enter Your Topic Name"],
-    maxLength: [30, "Name cannot exceed 10 characters"],
-    minLength: [4, "Name should have more than 4 characters"],
+   
   },
   UnitID: [
     {
