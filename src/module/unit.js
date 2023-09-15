@@ -11,7 +11,7 @@ const unitSchema = new mongoose.Schema({
   },
   UnitNumber: {
     type: String,
-    unique: true,
+ 
     required: [true, "please Enter You Unit Number"],
   },
   BookID: {
