@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const unitSchema = new mongoose.Schema({
   UnitName: {
     type: String,
-    unique: true,
+
     required: [true, "Please Enter Your Unit Name"],
    
     
