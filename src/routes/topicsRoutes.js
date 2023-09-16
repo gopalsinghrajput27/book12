@@ -7,16 +7,16 @@ const {
   deleteTopic,
 } = require("../controller/topicsControll");
 const { findUnitByName } = require("../middlewares/MiddlemsresForBooks");
-
+const { requireApiKey } = require("../middlewares/auth");
 const router = express.Router();
 
 router
   .route("/:bookName/:unitName/new/topic")
-  .post(findUnitByName, createTopics);
-router.route("/:bookName/:unitName/allTopic").get(findUnitByName, getAllTopics);
+  .post(requireApiKey,findUnitByName, createTopics);
+router.route("/:bookName/:unitName/allTopic").get(requireApiKey,findUnitByName, getAllTopics);
 router
   .route("/:bookName/:unitName/:topicName")
-  .get(findUnitByName, getTopicByName)
-  .put(findUnitByName, updateTopic)
-  .delete(findUnitByName, deleteTopic);
+  .get(requireApiKey,findUnitByName, getTopicByName)
+  .put(requireApiKey,findUnitByName, updateTopic)
+  .delete(requireApiKey,findUnitByName, deleteTopic);
 module.exports = router;
