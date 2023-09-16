@@ -8,19 +8,19 @@ const {
   getvideosByName,
 } = require("../controller/videosController");
 const { findTopicByName } = require("../middlewares/MiddlemsresForBooks");
-
+const { requireApiKey } = require("../middlewares/auth");
 const router = express.Router();
 
 router
   .route("/:bookName/:unitName/:topicName/new/videos")
-  .post(findTopicByName, createVideos);
+  .post(requireApiKey,findTopicByName, createVideos);
 router
   .route("/:bookName/:unitName/:topicName/allvideos")
-  .get(findTopicByName, getAllvideos);
+  .get(requireApiKey,findTopicByName, getAllvideos);
 router
   .route("/:bookName/:unitName/:topicName/:videosName")
-  .get(findTopicByName, getvideosByName)
-  .put(findTopicByName, getvideosUpdata)
-  .delete(findTopicByName, getvideosDelete);
+  .get(requireApiKey,findTopicByName, getvideosByName)
+  .put(requireApiKey,findTopicByName, getvideosUpdata)
+  .delete(requireApiKey,findTopicByName, getvideosDelete);
 
 module.exports = router;
