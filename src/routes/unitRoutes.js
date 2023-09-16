@@ -7,15 +7,15 @@ const {
   getUnitandDelete,
 } = require("../controller/unitController");
 const { findBookByName } = require("../middlewares/MiddlemsresForBooks");
-
+const { requireApiKey } = require("../middlewares/auth");
 const router = express.Router();
 
-router.route("/:bookName/new/unit").post(findBookByName, createUnit);
-router.route("/:bookName").get(findBookByName, getAllUnit);
+router.route("/:bookName/new/unit").post(requireApiKey,findBookByName, createUnit);
+router.route("/:bookName").get(requireApiKey,findBookByName, getAllUnit);
 router
   .route("/:bookName/:unitName")
-  .get(findBookByName, getUnitByName)
-  .put(findBookByName, getUnitUpdata)
-  .delete(findBookByName, getUnitandDelete);
+  .get(requireApiKey,findBookByName, getUnitByName)
+  .put(requireApiKey,findBookByName, getUnitUpdata)
+  .delete(requireApiKey,findBookByName, getUnitandDelete);
 
 module.exports = router;
