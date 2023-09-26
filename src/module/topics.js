@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const topicSchema = new mongoose.Schema({
   TopicName: {
     type: String,
-    unique: true,
+    
     required: [true, "Please Enter Your Topic Name"],
    
   },
